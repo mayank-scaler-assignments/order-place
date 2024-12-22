@@ -4,14 +4,16 @@ import com.scaler.dtos.*;
 import com.scaler.models.Bill;
 import com.scaler.models.Order;
 import com.scaler.services.OrderService;
+import org.springframework.beans.factory.annotation.Autowired;
 
 public class OrderController {
 
-    private OrderService orderService;
+    private final OrderService orderService;
 
     public OrderController(OrderService orderService) {
         this.orderService = orderService;
     }
+
     public PlaceOrderResponseDto placeOrder(PlaceOrderRequestDto requestDto){
         PlaceOrderResponseDto responseDto = new PlaceOrderResponseDto();
         try {
